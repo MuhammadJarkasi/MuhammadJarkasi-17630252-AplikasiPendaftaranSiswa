@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="700" pageHeight="842" columnWidth="660" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="38e63625-8938-41a6-8543-059a39163d3f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="nisn" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from tb_sma where nisn = $P{nisn}]]>
+	</queryString>
+	<field name="nisn" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jkel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ttl" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="asalsekolah" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tahunlulusan" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement uuid="721b97f9-5c7e-4151-a900-844d8caed135" mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000"/>
+				<staticText>
+					<reportElement uuid="2f1fd2af-74e7-47f6-980b-d97c9fce85c6" style="Title" x="0" y="0" width="451" height="66"/>
+					<textElement>
+						<font size="26" isBold="false"/>
+					</textElement>
+					<text><![CDATA[BUKTI PENDAFTARAN SISWA BARU]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="b5d38bc2-e9a8-46f6-a333-ea4dc5e379ac" style="SubTitle" x="157" y="66" width="249" height="29"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[SMAN 1 DAHA UTARA]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="4a5b13af-39e0-4026-97b1-b53aa648ddbb" mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000"/>
+				<staticText>
+					<reportElement uuid="0377dfe6-4032-430d-b1d5-a70912dd139e" x="144" y="2" width="304" height="30" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="20"/>
+					</textElement>
+					<text><![CDATA[TAHUN PELAJARAN 2022/2023]]></text>
+				</staticText>
+			</frame>
+			<image>
+				<reportElement uuid="b1a1bf6e-b837-4885-8f8c-a25356d422e1" x="451" y="0" width="104" height="132"/>
+				<imageExpression><![CDATA["C:\\Users\\Lenovo\\Documents\\NetBeansProjects\\sman1dahautara\\src\\data\\52840884logodahut.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="223" splitType="Stretch">
+			<frame>
+				<reportElement uuid="54860e5a-361b-4728-8c55-157053a53809" mode="Opaque" x="0" y="199" width="555" height="24" forecolor="#D0B48E" backcolor="#000000"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="f60cd7b6-12c6-47b5-87b4-9d568ee938f2" style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="287081d7-ce41-4ab9-a15d-c8509214a0b2" style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="e7fec127-ca0b-4095-8b10-7d63f7514313" style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement uuid="648cbadd-da44-423e-af36-b8dd7fb07f8d" style="Column header" x="13" y="9" width="79" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[NISN]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="d7bb5cbc-9288-4a66-a232-7e39ce90baa3" style="Detail" positionType="Float" x="136" y="9" width="116" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nisn}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="aee73ade-845f-4c7e-95ad-851657fe50e9" style="Column header" x="13" y="41" width="79" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="28ed9d41-1c90-4aee-a337-5b4246da94d2" style="Detail" positionType="Float" x="136" y="41" width="116" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="003d65ac-b90c-44f5-95b4-88d0bda9a948" style="Column header" x="13" y="80" width="93" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="8b54be8e-4086-41d5-8835-2e963752e364" style="Detail" positionType="Float" x="136" y="80" width="116" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jkel}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="9bc7cb90-4ada-45ab-a5cb-9d0957c1acb2" style="Column header" x="13" y="118" width="79" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="02c4e136-60f8-4485-a833-9b24281cf7fa" style="Detail" positionType="Float" x="136" y="118" width="116" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="cd2ccca7-a8aa-463b-9b1a-ab19faa3d120" style="Column header" x="337" y="9" width="135" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tempat, Tanggal Lahir]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="be4f37a6-7ba6-42c9-9b9f-29c9c6945c21" style="Detail" positionType="Float" x="513" y="9" width="118" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ttl}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="fa6450c4-0845-4237-b163-b70f38d621d5" style="Column header" x="337" y="41" width="79" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Asal Sekolah]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="b3b9b9ed-95b4-4468-a85e-6f524d81f926" style="Detail" positionType="Float" x="513" y="41" width="118" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{asalsekolah}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0aaa37cf-afa0-49d8-be3a-48da0b190f6a" style="Column header" x="337" y="80" width="95" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tahun Lulusan]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="94905b8f-15bd-4c11-849f-1ee1b3c8d3a1" style="Detail" positionType="Float" x="513" y="80" width="118" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tahunlulusan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

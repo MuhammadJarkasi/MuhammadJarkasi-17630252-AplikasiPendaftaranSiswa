@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Title-->
+    <title>Login</title>
+    <link rel="icon" href="./img/icons/ACoding.png">
+    <!-- Fonts-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Core Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    
+    <form name="sendin" action="http://mahkotaid.net/login" method="post">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script type="text/java
